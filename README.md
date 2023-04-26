@@ -5,4 +5,6 @@ A simple web based application that provides an interface that enables customers
 - [] Login System
 - [] Registration System
 - [] Admin Site
+- [] [ER-Diagram](ER-Diagram "Goto ER-Diagram")
 
+## ER-Diagram
