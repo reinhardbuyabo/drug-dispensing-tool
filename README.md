@@ -1,7 +1,7 @@
-# DRUG DISPENSING TOOL
+# DRUG DISPENSING TOOL #
 A simple web based application that provides an interface that enables customers to access **pharmaceutical products** as displayed by the website owners.
 
-## Requirements
+## Requirements ##
 - [ ] Login System
 - [ ] Registration System
 - [ ] Forgot Password Service
@@ -13,10 +13,10 @@ A simple web based application that provides an interface that enables customers
 - [ ] Products To Be Displayed
     - [ ] Products Database
 
-## ER-Diagram
+## ER-Diagram ##
 Here, we are supposed to create er-diagrams for 3 databases:
-### 1. Admin 
+### 1. Admin ###
 
-### 2. Customer
+### 2. Customer ###
 
-### 3. Products(Drugs)
+### 3. Products(Drugs) ###
