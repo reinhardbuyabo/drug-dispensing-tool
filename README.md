@@ -14,7 +14,7 @@ A simple web based application that provides an interface that enables customers
     - [ ] Products Database
 
 ## ER-Diagram ##
-Here, we are supposed to create er-diagrams for 3 databases:
+[ER-Diagram](./Entity%20Relationship%20Diagram.xml)
 ### 1. Admin ###
 
 ### 2. Customer ###
