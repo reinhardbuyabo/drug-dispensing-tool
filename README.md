@@ -14,7 +14,7 @@ A simple web based application that provides an interface that enables customers
     - [ ] Products Database
 
 ## ER-Diagram ##
-[ER-Diagram](./Entity%20Relationship%20Diagram.xml)
+![ER-Diagram](./Entity-Relationship-Diagram.png)
 ### 1. Admin ###
 
 ### 2. Customer ###
