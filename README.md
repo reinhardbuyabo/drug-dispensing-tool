@@ -7,7 +7,7 @@ A simple web based application that provides an interface that enables customers
 - [ ] Forgot Password Service
 - [ ] Admin Site
     - [ ] Admin Database
-- [ ] [ER-Diagram](##ER-Diagram "Goto ER-Diagram")
+- [x] [ER-Diagram](##ER-Diagram "Goto ER-Diagram")
 - [ ] Customer Interface
     - [ ] Customer Database
 - [ ] Products To Be Displayed
