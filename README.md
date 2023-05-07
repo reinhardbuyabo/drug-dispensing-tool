@@ -1,22 +1,25 @@
-# DRUG DISPENSING TOOL #
+# DRUG DISPENSING TOOL
+
 A simple web based application that provides an interface that enables customers to access **pharmaceutical products** as displayed by the website owners.
 
-## Requirements ##
+## Requirements
+
 - [ ] Login System
 - [ ] Registration System
 - [ ] Forgot Password Service
 - [ ] Admin Site
-    - [ ] Admin Database
+  - [ ] Admin Database
 - [x] [ER-Diagram](##ER-Diagram "Goto ER-Diagram")
 - [ ] Customer Interface
-    - [ ] Customer Database
+  - [ ] Customer Database
 - [ ] Products To Be Displayed
-    - [ ] Products Database
+  - [ ] Products Database
+- [x] [Use-Case-Diagram](##Use-Case-diagram "Goto Use-Case Diagram")
 
-## ER-Diagram ##
-![ER-Diagram](./Entity-Relationship-Diagram.png)
-### 1. Admin ###
+## ER-Diagram
 
-### 2. Customer ###
+![ER-Diagram](./ER-Diagram.png)
 
-### 3. Products(Drugs) ###
+## Use-Case Diagram
+
+![Use-Case Diagram](./Use-Case-Diagram.png)
