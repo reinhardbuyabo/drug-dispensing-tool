@@ -10,11 +10,11 @@ A simple web based application that provides an interface that enables customers
 - [ ] Admin Site
   - [ ] Admin Database
 - [x] [ER-Diagram](##ER-Diagram "Goto ER-Diagram")
-- [ ] Customer Interface
-  - [ ] Customer Database
-- [ ] Products To Be Displayed
+- [ ] Patient Interface
+  - [ ] Patient Database
+- [ ] Products(Medicine) To Be Displayed
   - [ ] Products Database
-- [x] [Use-Case-Diagram](##Use-Case-diagram "Goto Use-Case Diagram")
+- [x] [Use-Case-Diagram](##Use-Case-Diagram "Goto Use-Case Diagram")
 
 ## ER-Diagram
 
