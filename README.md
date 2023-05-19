@@ -15,6 +15,7 @@ A simple web based application that provides an interface that enables customers
 - [ ] Products(Medicine) To Be Displayed
   - [ ] Products Database
 - [x] [Use-Case-Diagram](##Use-Case-Diagram "Goto Use-Case Diagram")
+- [x] [UML-ClasS Diagram]()
 
 ## ER-Diagram
 
@@ -23,3 +24,7 @@ A simple web based application that provides an interface that enables customers
 ## Use-Case Diagram
 
 ![Use-Case Diagram](./Use-Case-Diagram.png)
+
+## UML-Class Diagram
+
+![UML-Class Diagram](./classDiagram.drawio.png)
