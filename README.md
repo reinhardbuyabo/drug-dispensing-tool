@@ -9,13 +9,13 @@ A simple web based application that provides an interface that enables customers
 - [ ] Forgot Password Service
 - [ ] Admin Site
   - [ ] Admin Database
-- [x] [ER-Diagram](##ER-Diagram "Goto ER-Diagram")
+- [x] [ER-Diagram](#er-diagram "Goto ER-Diagram")
 - [ ] Patient Interface
   - [ ] Patient Database
 - [ ] Products(Medicine) To Be Displayed
   - [ ] Products Database
-- [x] [Use-Case-Diagram](##Use-Case-Diagram "Goto Use-Case Diagram")
-- [x] [UML-Class Diagram](#uml-class-diagram)
+- [x] [Use-Case-Diagram](#use-case-diagram "Goto Use-Case Diagram")
+- [x] [UML-Class Diagram](#uml-class-diagram "Goto UML-Class Diagram")
 
 ## ER-Diagram
 
