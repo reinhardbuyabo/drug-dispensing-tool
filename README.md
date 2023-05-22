@@ -16,6 +16,7 @@ A simple web based application that provides an interface that enables customers
   - [ ] Products Database
 - [x] [Use-Case-Diagram](#use-case-diagram "Goto Use-Case Diagram")
 - [x] [UML-Class Diagram](#uml-class-diagram "Goto UML-Class Diagram")
+- [ ] Wireframe
 
 ## ER-Diagram
 
