@@ -16,7 +16,7 @@ A simple web based application that provides an interface that enables customers
   - [ ] Products Database
 - [x] [Use-Case-Diagram](#use-case-diagram "Goto Use-Case Diagram")
 - [x] [UML-Class Diagram](#uml-class-diagram "Goto UML-Class Diagram")
-- [ ] Wireframe
+- [ ] Wireframes
 
 ## ER-Diagram
 
@@ -29,3 +29,11 @@ A simple web based application that provides an interface that enables customers
 ## UML-Class Diagram
 
 ![UML-Class Diagram](./classDiagram.drawio.png)
+
+## Mobile Wireframe
+
+![Mobile-Wireframe](./iPhone%20SE%20-%201%20Wireframe.png)
+
+## Desktop Wireframe
+
+![Desktop-Wireframe](./Desktop%20-%201%20Wireframe.png)
