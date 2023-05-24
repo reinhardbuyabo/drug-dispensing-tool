@@ -32,7 +32,9 @@ A simple web based application that provides an interface that enables customers
 
 ## Mobile Wireframe
 
-![Mobile-Wireframe](./iPhone%20SE%20-%201%20Wireframe.png)
+<p align="center">
+  <img width="320" height="2297" src="iPhone SE - 1 Wireframe.png">
+</p>
 
 ## Desktop Wireframe
 
