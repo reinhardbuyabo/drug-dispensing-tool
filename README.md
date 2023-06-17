@@ -16,26 +16,26 @@ A simple web based application that provides an interface that enables customers
   - [ ] Products Database
 - [x] [Use-Case-Diagram](#use-case-diagram "Goto Use-Case Diagram")
 - [x] [UML-Class Diagram](#uml-class-diagram "Goto UML-Class Diagram")
-- [ ] Wireframes
+- [x] Wireframes
 
 ## ER-Diagram
 
-![ER-Diagram](./ER-Diagram.png)
+![ER-Diagram](./assets/images/ER-Diagram.png)
 
 ## Use-Case Diagram
 
-![Use-Case Diagram](./Use-Case-Diagram.png)
+![Use-Case Diagram](./assets/images/Use-Case-Diagram.png)
 
 ## UML-Class Diagram
 
-![UML-Class Diagram](./classDiagram.drawio.png)
+![UML-Class Diagram](./assets/images/classDiagram.drawio.png)
 
 ## Mobile Wireframe
 
 <p align="center">
-  <img width="320" height="2297" src="iPhone SE - 1 Wireframe.png">
+  <img width="320" height="2297" src="./assets/images/iPhone%20SE%20-%201%20Wireframe.png">
 </p>
 
 ## Desktop Wireframe
 
-![Desktop-Wireframe](./Desktop%20-%201%20Wireframe.png)
+![Desktop-Wireframe](./assets/images/Desktop%20-%201%20Wireframe.png)
