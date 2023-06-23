@@ -12,13 +12,13 @@ if (isset($_POST['submit'])) {
     $user_type = "patient";
 
     // database insert SQL code
-    $sql = "INSERT INTO patient (first_name, last_name, email, phone, patient_id, username, password, user_type) VALUES ('$first_name', '$last_name', '$email', '$phone', '$patient_id', '$username', '$password', '$user_type')";
+    $sql = "UPDATE patient SET first_name = '$first_name', last_name = '$last_name', email = '$email', phone ='$phone', username ='$username', password = '$password' WHERE patient_id=" . $patient_id;
 
     $rs = mysqli_query($con, $sql);
     if ($rs) {
-        echo "Contact Records Inserted";
+        echo "User's Record Edited Successfully";
         // var_dump($_SESSION);
     }
 } else {
-    echo "Are you a genuine visitor?";
+    echo "Something Went Wrong!";
 }
