@@ -18,6 +18,7 @@ if (isset($_POST['submit'])) {
     if ($rs) {
         echo "Contact Records Inserted";
         // var_dump($_SESSION);
+        echo "<br><a href='displayUsers.php'>Display Users</a>";
     }
 } else {
     echo "Are you a genuine visitor?";

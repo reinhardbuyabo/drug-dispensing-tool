@@ -54,8 +54,6 @@
         } else {
             echo "<tr><td colspan='6'>No users found.</td></tr>";
         }
-
-        mysqli_close($conn);
         ?>
     </table>
 
@@ -64,16 +62,21 @@
     $query = "SELECT COUNT(*) AS total FROM patient";
     $result = mysqli_query($conn, $query);
     $row = mysqli_fetch_assoc($result);
-    $totalItems = $row['total']; // Total number of items
+    $totalItems = $row['total']; // Total number of items from db.
 
-    $totalPages = ceil($totalItems / $itemsPerPage); // Calculate total number of pages
+    $totalPages = ceil($totalItems / $itemsPerPage); // Calculating total number of pages
 
     echo "<div style='margin-top: 10px;'>";
     for ($i = 1; $i <= $totalPages; $i++) {
         echo "<a href='?page=$i'>$i</a> ";
     }
     echo "</div>";
+    mysqli_close($conn);
     ?>
+
+    <p>
+        <a href="./patientform.html">Add User</a>
+    </p>
 </body>
 
 </html>
