@@ -31,7 +31,13 @@
         // Retrieve user details from the database
         require_once("connect.php");
 
-        $query = "SELECT * FROM patient";
+        // Pagination configuration
+        $itemsPerPage = 10; // Number of items to display per page
+        $currentPage = isset($_GET['page']) ? $_GET['page'] : 1; // Get the current page number
+
+        $offset = ($currentPage - 1) * $itemsPerPage; // Calculate the offset
+
+        $query = "SELECT * FROM patient LIMIT $offset, $itemsPerPage";
         $result = mysqli_query($conn, $query);
 
         if (mysqli_num_rows($result) > 0) {
@@ -52,6 +58,22 @@
         mysqli_close($conn);
         ?>
     </table>
+
+    <?php
+    // Pagination links
+    $query = "SELECT COUNT(*) AS total FROM patient";
+    $result = mysqli_query($conn, $query);
+    $row = mysqli_fetch_assoc($result);
+    $totalItems = $row['total']; // Total number of items
+
+    $totalPages = ceil($totalItems / $itemsPerPage); // Calculate total number of pages
+
+    echo "<div style='margin-top: 10px;'>";
+    for ($i = 1; $i <= $totalPages; $i++) {
+        echo "<a href='?page=$i'>$i</a> ";
+    }
+    echo "</div>";
+    ?>
 </body>
 
 </html>
