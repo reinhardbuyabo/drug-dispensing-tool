@@ -10,8 +10,10 @@
 <body>
     <!-- Todo 1. Capable of editing user information -->
     <!-- Todo 2. Capable of viewing all users -->
+    <a href="./displayUsers.php">Display All Users</a>
     <!-- Todo 3. Can Delete users -->
-    <h2>Welcome, <?php echo $_SESSION['username']; ?></h2>
+    <h2>Welcome, <?php session_start();
+                    print_r($_SESSION); ?></h2>
     <p>This is the Admin page</p>
 </body>
 
