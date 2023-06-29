@@ -4,8 +4,8 @@ A simple web based application that provides an interface that enables customers
 
 ## Requirements
 
-- [ ] Login System
-- [ ] Registration System
+- [x] Login System
+- [x] Registration System
 - [ ] Forgot Password Service
 - [ ] Admin Site
   - [ ] Admin Database
