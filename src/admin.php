@@ -8,13 +8,14 @@
 </head>
 
 <body>
-    <!-- Todo 1. Capable of editing user information -->
-    <!-- Todo 2. Capable of viewing all users -->
-    <a href="./displayUsers.php">Display All Users</a>
-    <!-- Todo 3. Can Delete users -->
+
+    <a href="./display_users.php">Display All Users</a>
+
     <h2>Welcome, <?php session_start();
                     print_r($_SESSION); ?></h2>
     <p>This is the Admin page</p>
+
+    <p><a href="./doctor_form.html">Add A Doctor</a></p>
 </body>
 
 </html>

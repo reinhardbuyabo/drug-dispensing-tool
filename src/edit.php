@@ -10,10 +10,11 @@
             require_once 'connect.php';
 
             $user = [];
-            if (isset($_GET['id'])) {
-                $patientId = $_GET['id'];
+            if (isset($_GET['id'])  && isset($_GET['user_type'])) {
+                $id = $_GET['id'];
+                $user_type = $_GET['user_type'];
 
-                $query = "SELECT * FROM patient WHERE patient_id = " . $patientId;
+                $query = "SELECT * FROM " . $user_type . " WHERE " . $user_type . "_id = " . $id;
                 $result = mysqli_query($conn, $query);
 
                 if ($result) {
@@ -25,7 +26,7 @@
                             $user = $row;
                         }
                     } else {
-                        echo "No patient found with the specified ID.";
+                        echo "No record found with the specified ID.";
                     }
                 } else {
                     echo "Query execution failed: " . mysqli_error($conn);
@@ -55,8 +56,8 @@
                 <input type="text" name="phone" id="phone" value="<?php echo $user['phone']; ?>">
             </p>
             <p>
-                <label for="Patient ID">Patient ID</label>
-                <input type="text" name="patient_id" id="patient_id" value="<?php echo $_GET['id']; ?>" readonly>
+                <label for="<?php echo $_GET['user_type']; ?> ID"><?php echo $_GET['user_type']; ?> ID</label>
+                <input type="text" name="id" id="id" value="<?php echo $_GET['id']; ?>" readonly>
             </p>
             <label for=" username">Username </label>
             <input type="text" name="username" id="username" value="<?php echo $user['phone']; ?>">
@@ -65,6 +66,9 @@
                 <label for="password">Password</label>
                 <input type="password" name="password" id="password" value="<?php echo $user['password']; ?>">
             </p>
+
+            <!-- <label for="User Type">User Type</label> -->
+            <input type="text" name="user_type" id="user_type" value="<?php echo $user_type; ?>" hidden>
 
             <p>
                 <input type="submit" name="submit" id="submit" value="Submit">
