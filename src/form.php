@@ -6,19 +6,33 @@ if (isset($_POST['submit'])) {
     $last_name = $_POST['last_name'];
     $email = $_POST['email'];
     $phone = $_POST['phone'];
-    $patient_id = $_POST['patient_id'];
+    $user_type = $_POST['user_type'];
+    if ($user_type == 'patient') {
+        $id = $_POST['patient_id'];
+    } else if ($user_type == 'doctor') {
+        $id = $_POST['doctor_id'];
+    } else if ($user_type == 'pharmacist') {
+        $id = $_POST['pharmacist_id'];
+    }
+
     $username = $_POST['username'];
     $password = $_POST['password'];
-    $user_type = "patient";
+
 
     // database insert SQL code
-    $sql = "INSERT INTO patient (first_name, last_name, email, phone, patient_id, username, password, user_type) VALUES ('$first_name', '$last_name', '$email', '$phone', '$patient_id', '$username', '$password', '$user_type')";
+    $sql = "INSERT INTO $user_type (first_name, last_name, email, phone, " . $user_type . "_id, username, password, user_type) VALUES ('$first_name', '$last_name', '$email', '$phone', '$id', '$username', '$password', '$user_type')";
 
     $rs = mysqli_query($con, $sql);
     if ($rs) {
         echo "Contact Records Inserted";
         // var_dump($_SESSION);
-        echo "<br><a href='display_users.php'>Display Users</a>";
+        if ($user_type == 'patient') {
+            echo "<br><a href='display_users.php'>Display Users</a>";
+        } else if ($user_type == 'doctor') {
+            echo "<br><a href='display_doctors.php'>Display Doctors</a>";
+        } else if ($user_type == 'pharmacist') {
+            echo "<br><a href='display_pharmacists.php'>Display Pharmacists</a>";
+        }
     }
 } else {
     echo "Are you a genuine visitor?";

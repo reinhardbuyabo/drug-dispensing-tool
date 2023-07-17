@@ -16,6 +16,7 @@
     <p>This is the Admin page</p>
 
     <p><a href="./doctor_form.html">Add A Doctor</a></p>
+    <p><a href="./pharmacist_form.html">Add A Pharmacist</a></p>
 </body>
 
 </html>

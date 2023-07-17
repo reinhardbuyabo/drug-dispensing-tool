@@ -77,7 +77,7 @@
     ?>
 
     <p>
-        <a href="./doctor_form.html">Add User</a>
+        <a href="./doctor_form.html">Add Doctor</a>
     </p>
 </body>
 

@@ -24,6 +24,7 @@
             <th>Last Name</th>
             <th>Email</th>
             <th>Phone</th>
+            <th>User Type</th>
             <th>Edit</th>
             <th>Delete</th>
         </tr>
@@ -37,7 +38,7 @@
 
         $offset = ($currentPage - 1) * $itemsPerPage; // Calculate the offset
 
-        $query = "SELECT * FROM patient LIMIT $offset, $itemsPerPage";
+        $query = "SELECT * FROM pharmacist LIMIT $offset, $itemsPerPage";
         $result = mysqli_query($conn, $query);
 
         if (mysqli_num_rows($result) > 0) {
@@ -47,8 +48,9 @@
                 echo "<td>" . $row['last_name'] . "</td>";
                 echo "<td>" . $row['email'] . "</td>";
                 echo "<td>" . $row['phone'] . "</td>";
-                echo "<td><a href='edit.php?id=" . $row['patient_id'] . "'>Edit</a></td>";
-                echo "<td><a href='delete.php?id=" . $row['patient_id'] . "'>Delete</a></td>";
+                echo "<td>" . $row['user_type'] . "</td>";
+                echo "<td><a href='edit.php?id=" . $row['pharmacist_id'] . "&user_type=" . $row['user_type'] . "'>Edit</a></td>";
+                echo "<td><a href='delete.php?id=" . $row['pharmacist_id'] . "&user_type=" . $row['user_type'] . "'>Delete</a></td>";
                 echo "</tr>";
             }
         } else {
@@ -59,7 +61,7 @@
 
     <?php
     // Pagination links
-    $query = "SELECT COUNT(*) AS total FROM patient";
+    $query = "SELECT COUNT(*) AS total FROM pharmacist";
     $result = mysqli_query($conn, $query);
     $row = mysqli_fetch_assoc($result);
     $totalItems = $row['total']; // Total number of items from db.
@@ -75,7 +77,7 @@
     ?>
 
     <p>
-        <a href="./patient_form.html">Add User</a>
+        <a href="./pharmacist_form.html">Add Pharmacist</a>
     </p>
 </body>
 
