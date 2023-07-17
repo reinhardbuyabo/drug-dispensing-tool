@@ -13,6 +13,8 @@ if (isset($_POST['submit'])) {
         $id = $_POST['doctor_id'];
     } else if ($user_type == 'pharmacist') {
         $id = $_POST['pharmacist_id'];
+    } else if ($user_type == 'admin') {
+        $id = $_POST['admin_id'];
     }
 
     $username = $_POST['username'];
@@ -32,6 +34,8 @@ if (isset($_POST['submit'])) {
             echo "<br><a href='display_doctors.php'>Display Doctors</a>";
         } else if ($user_type == 'pharmacist') {
             echo "<br><a href='display_pharmacists.php'>Display Pharmacists</a>";
+        } else if ($user_type == 'admin') {
+            echo "<br><a href='admin.php?name=" . $username . "'>Admin Page</a>";
         }
     }
 } else {
