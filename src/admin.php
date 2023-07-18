@@ -5,25 +5,44 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Page</title>
+    <link rel="stylesheet" href="../styles/homes.css">
 </head>
 
 <body>
 
-    <h2>
-        <?php
-        if (isset($_GET['name'])) {
-            echo "Welcome " . $_GET['name'];
-        }
-        ?>
-    </h2>
+    <div class="banner">
+        <div class="navbar">
+            <h2><?php
+                if (isset($_GET['name'])) {
+                    echo "welcome " . $_GET['name'];
+                }
+                ?>
+            </h2>
+            <ul>
+                <li><a href="display_doctors.php">Doctors</a></li>
+                <li><a href="display_users.php">Patients</a></li>
+                <li><a href="display_pharmacists.php">Pharmacists</a></li>
+                <li><a href="display_drugs.php">Drugs</a></li>
+            </ul>
+        </div>
 
-    <p>This is the Admin Page</p>
+        <div class="content">
+            <h1>MANAGE THIS SYSTEM</h1>
+            <p><span>Note:</span> This page is for authorized users only!</p>
+
+            <div>
+                <button type="button"><span></span>ADD USER</button>
+                <button type="button"><span></span>ADD DRUG</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- <p>This is the Admin Page</p>
 
     <a href="./display_users.php">Display All Users</a>
 
-
-    <p><a href="./doctor_form.html">Add A Doctor</a></p>
-    <p><a href="./pharmacist_form.html">Add A Pharmacist</a></p>
+    <a href="./doctor_form.html">Add A Doctor</a>
+    <a href="./pharmacist_form.html">Add A Pharmacist</a> -->
 </body>
 
 </html>
