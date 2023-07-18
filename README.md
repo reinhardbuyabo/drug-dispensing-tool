@@ -7,13 +7,16 @@ A simple web based application that provides an interface that enables customers
 - [x] Login System
 - [x] Registration System
 - [ ] Forgot Password Service
-- [ ] Admin Site
-  - [ ] Admin Database
-- [x] [ER-Diagram](#er-diagram "Goto ER-Diagram")
-- [ ] Patient Interface
-  - [ ] Patient Database
+- [x] Admin Site
+  - [x] Admin Database
+- [x] Doc
+- [x] Pharmacist Interface
+  - [x] Pharmacist
+- [x] Patient Interface
+  - [x] Patient Database
 - [ ] Products(Medicine) To Be Displayed
   - [ ] Products Database
+  - [x] [ER-Diagram](#er-diagram "Goto ER-Diagram")
 - [x] [Use-Case-Diagram](#use-case-diagram "Goto Use-Case Diagram")
 - [x] [UML-Class Diagram](#uml-class-diagram "Goto UML-Class Diagram")
 - [x] Wireframes

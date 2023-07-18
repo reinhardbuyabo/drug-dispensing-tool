@@ -1,43 +1,71 @@
-<html>
- <head>
- </head>
- <body>
-   <div class="form">
-    <form method="POST" action="form.php">
-      <p>
-      <label for="first name">First Name </label>
-      <input type="text" name="first_name" id="first_name">
-      </p>
-      <p>
-      <label for="last name">Last Name </label>
-      <input type="text" name="last_name" id="last_name">
-      </p>
-      <p>
-      <label for="email">Email</label>
-      <input type="text" name="email" id="email">
-      </p>
-      <p>
-      <label for="phone number">Phone Number</label>
-      <input type="text" name="phone" id="phone">
-      </p>
-      <p>
-      <label for="Patient ID">Patient ID</label>
-      <input type="text" name="patient_id" id="patient_id">
-      </p>
-      <label for="username">Username </label>
-      <input type="text" name="username" id="username">
-      </p>
-      <p>
-      <label for="password">Password</label>
-      <input type="password" name="password" id="password">
-      </p>
-      
-        <!-- <label for="user_type">User Type</label> -->
-        <input type="text" name="user_type" id="user_type" value="patient" hidden>
-    
-      <p>
-      <input type="submit" name="submit" id="submit" value="Submit">
-      </p>
-    </form>
- </body>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patient Form</title>
+    <link rel="stylesheet" href="../styles/styles.css">
+</head>
+
+<body>
+    <div class="hero">
+        <div class="form-box">
+            <form class="input-group" method="POST" action="form.php">
+                <div class="form-row">
+                    <label for="first_name">First Name:</label>
+                    <input class="input-field" type="text" id="first_name" name="first_name" required>
+                </div>
+                <div class="form-row">
+                    <label for="last_name">Last Name:</label>
+                    <input class="input-field" type="text" id="last_name" name="last_name" required>
+                </div>
+                <div class="form-row">
+                    <label for="email">Email:</label>
+                    <input class="input-field" type="text" id="email" name="email" required>
+                </div>
+                <div class="form-row">
+                    <label for="phone">Phone Number:</label>
+                    <input class="input-field" type="text" id="phone" name="phone" required>
+                </div>
+                <div class="form-row">
+                    <label for="patient_id">Patient ID:</label>
+                    <input class="input-field" type="text" id="patient_id" name="patient_id" required>
+                </div>
+                <div class="form-row">
+                    <label for="username">Username:</label>
+                    <input class="input-field" type="text" id="username" name="username" required>
+                </div>
+                <div class="form-row">
+                    <label for="password">Password:</label>
+                    <input class="input-field" type="password" id="password" name="password" required>
+                </div>
+                <input type="text" name="user_type" id="user_type" value="patient" hidden>
+                <div class="form-row">
+                    <input class="submit-btn" type="submit" name="submit" id="submit" value="Register">
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+
 </html>
+
+<!-- <form id="register" class="input-group" method="POST" action="form.php">
+  <!-- <label for="first_name">First Name:</label> -->
+  <input placeholder="First Name" class="input-field" type="text" id="first_name" name="first_name" required>
+  <!-- <label for="last_name">Last Name:</label> -->
+  <input placeholder="Last Name" class="input-field" type="text" id="last_name" name="last_name" required>
+  <!-- <label for="email">Email:</label> -->
+  <input placeholder="Email" class="input-field" type="text" id="email" name="email" required>
+  <!-- <label for="phone">Phone Number:</label> -->
+  <input placeholder="Phone Number" class="input-field" type="text" id="phone" name="phone" required>
+  <!-- <label for="patient_id">Patient ID:</label> -->
+  <input placeholder="Patient ID" class="input-field" type="text" id="patient_id" name="patient_id" required>
+  <!-- <label for="username">Username:</label> -->
+  <input placeholder="Username" class="input-field" type="text" id="username" name="username" required>
+  <!-- <label for="password">Password:</label> -->
+  <input placeholder="Password" class="input-field" type="password" id="password" name="password" required>
+  <input type="text" name="user_type" id="user_type" value="patient" hidden>
+  <input class="submit-btn" type="submit" name="submit" id="submit" value="Register">
+</form> -->
