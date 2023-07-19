@@ -94,6 +94,11 @@ button {
     overflow: hidden;
 }
 
+.content div button a {
+    text-decoration: none;
+    color: #fff;
+}
+
 div button span {
     background: #009688;
     height: 100%;

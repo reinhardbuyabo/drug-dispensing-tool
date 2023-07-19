@@ -22,7 +22,7 @@
                 <li><a href="display_doctors.php">Doctors</a></li>
                 <li><a href="display_users.php">Patients</a></li>
                 <li><a href="display_pharmacists.php">Pharmacists</a></li>
-                <li><a href="display_drugs.php">Drugs</a></li>
+                <li><a href="display_drugs.php?user_type=admin">Drugs</a></li>
             </ul>
         </div>
 
@@ -32,7 +32,7 @@
 
             <div>
                 <button type="button"><span></span>ADD USER</button>
-                <button type="button"><span></span>ADD DRUG</button>
+                <button type="button"><span></span><a href="add_drug.php">ADD DRUG</a></button>
             </div>
         </div>
     </div>

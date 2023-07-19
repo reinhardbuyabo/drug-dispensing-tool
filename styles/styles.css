@@ -11,14 +11,15 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background: url('../assets/images/banner.jpg') no-repeat;
+    /* background: url('../assets/images/banner.jpg') no-repeat; */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url('../assets/images/banner.jpg');
     background-size: cover;
     background-position: center;
 }
 
 .wrapper {
     width: 420px;
-    background: grey;
+    background: darkslategray;
     color: #fff;
     border-radius: 10px;
     padding: 30px 40px;
@@ -71,7 +72,7 @@ body {
 
 .remember-forgot label input {
     accent-color: #fff;
-    margin-right: 3px;
+    /* margin-right: 3px; */
 }
 
 .remember-forgot a {

@@ -1,0 +1,81 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Courier New', Courier, monospace;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    min-height: 100vh;
+    align-items: center;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url('../assets/images/banner.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.wrapper {
+    margin: 0 auto;
+    max-width: 80%;
+    max-height: 100vh;
+    background-color: lightblue;
+    border-radius: 15px;
+    text-align: center;
+    color: #fff;
+    border-radius: 10px;
+    padding: 70px 30px 30px;
+}
+
+tr td a {
+    text-decoration: none;
+    color: #009879;
+}
+
+div a {
+    color: black;
+}
+
+p a {
+    color: black;
+}
+
+.content-table {
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 0.9em;
+    min-width: 400px;
+    border-radius: 5px 5px 0 0;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+.content-table thead tr {
+    background-color: #009879;
+    
+    color: #fff;
+    text-align: left;
+    font-weight: bold;
+}
+
+.content-table th, .content-table td {
+    padding: 12px 15px;
+}
+
+.content-table tbody tr {
+    border-bottom: 1px solid grey;
+}
+
+.content-table tbody tr:nth-of-type(even){
+    background-color: #f3f3f3;
+    color: black;
+}
+
+.content-table tbody tr:last-of-type {
+    border-bottom: 2px solid #009879;
+}
+
+.content-table tbody tr.active-row {
+    font-weight: bold;
+    color: #009879;
+}

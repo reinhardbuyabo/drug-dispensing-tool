@@ -20,13 +20,19 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         // Redirect the user based on user type
         if ($_SESSION['user_type'] == 'admin') {
-            header("Location: admin.php");
+            $redirect_url = 'admin.php?' . http_build_query(array('name' => $_SESSION['username']));
+
+            header('Location: ' . $redirect_url);
+            exit;
         } else if ($_SESSION['user_type'] == 'patient') {
             header("Location: user.php");
+            exit;
         } else if ($_SESSION['user_type'] == 'pharmacist') {
             header('Location: pharmacist.php');
+            exit;
         } else if ($_SESSION['user_type'] == 'doctor') {
             header('Location: doctor.php');
+            exit;
         }
     } else {
         // Login Failed

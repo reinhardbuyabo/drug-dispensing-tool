@@ -23,7 +23,12 @@
             </div>
             <!-- <label for="password">Password:</label> -->
 
-            <input type="text" name="user_type" id="user_type" value="<?php echo $_GET['user_type']; ?>" hidden>
+            <?php
+            if (isset($_GET['user_type'])) {
+                echo '<input type="text" name="user_type" id="user_type" value="' . $_GET['user_type'] . '" hidden>';
+            }
+            ?>
+
 
             <div class="remember-forgot">
                 <label for="remember-forgot">
