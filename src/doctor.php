@@ -1,20 +1,6 @@
 <?php
-session_start(); // Start or resume the session
-
-// Check if the form is submitted
-if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST["submit"])) {
-    // Form is submitted, handle the form data
-    $patient = $_POST["patient"];
-
-    // Update session variables based on form data
-    if (!empty($patient)) {
-        $_SESSION["patient"] = $patient;
-    }
-    echo print_r($_SESSION);
-}
-
-// ... Your other PHP code ...
-
+require 'connect.php';
+session_start();
 ?>
 
 <!DOCTYPE html>
@@ -23,109 +9,94 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST["submit"])) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Manage System</title>
+    <title>Admin Page</title>
+    <script src="https://kit.fontawesome.com/9e862feeff.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="../styles/homes.css">
 </head>
 
 <body>
-    <div class="banner">
-        <!-- ... (Other content) ... -->
 
+    <div class="banner">
         <div class="navbar">
             <h2><?php
-                $_SESSION = $_GET;
-                if (isset($_SESSION['name'])) {
-                    echo "welcome " . $_SESSION['name'];
+                if (isset($_GET['name'])) {
+                    echo "welcome " . $_GET['name'];
                 }
                 ?>
             </h2>
             <ul>
                 <li><a href="display_users.php">Patients</a></li>
                 <li><a href="display_pharmacists.php">Pharmacists</a></li>
-                <li><a href="display_drugs.php?user_type=doctor">Drugs</a></li>
+                <li><a href="display_drugs.php?user_type=admin">Drugs</a></li>
             </ul>
         </div>
 
         <div class="content">
-            <h1>MANAGE THIS SYSTEM</h1>
-            <p><span>Note:</span> This page is for authorized users only!</p>
+            <h1>DOCTOR'S INTERFACE</h1>
+            <p><span>Note:</span> This page is for doctors only!</p>
 
-            <div class="search">
-                <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
-                    <input type="text" name="patient" id="search_patient">
 
-                    <!-- Add the button inside the form with type="submit" -->
-                    <input type="submit""><span></span>
-
+            <div class="wrapper">
+                <form class="input-group" method="post">
+                    <div class="input-field">
+                        <input type="text" name="search" id="search" placeholder="Username To Search">
+                        <i class="fa-solid fa-user"></i>
+                    </div>
+                    <button class="submit-btn" name="submit">Search</button>
                 </form>
+
             </div>
 
-            <!-- ... (Other content) ... -->
+            <div class="wrapper-table">
+                <table class="content-table">
+                    <?php
+                    if (isset($_POST["submit"])) {
+                        $search = $_POST["search"];
 
+                        $sql = "SELECT * FROM patient WHERE username = '$search'";
+                        $result = mysqli_query($conn, $sql);
+
+                        if ($result) {
+                            $num = mysqli_num_rows($result);
+                            echo $num;
+
+                            if (mysqli_num_rows($result) > 0) {
+                                echo '<thead>
+                            <tr>
+                            <th>Patient ID</th>
+                            <th>First Name</th>
+                            <th>Last Name</th>
+                            <th>Email</th>
+                            <th>Phone</th>
+                            <th>Username</th>
+                            <th>Prescribe</th>
+                            </tr>
+                        </thead>';
+
+                                $row = mysqli_fetch_assoc($result);
+
+                                echo '<tbody>
+                            <tr>
+                                <td>' . $row['patient_id'] . '</td>
+                                <td>' . $row['first_name'] . '</td>
+                                <td>' . $row['last_name'] . '</td>
+                                <td>' . $row['email'] . '</td>
+                                <td>' . $row['phone'] . '</td>
+                                <td>' . $row['username'] . '</td>
+                                <td><a href="prescribe.php">Presribe Drug</a></td>
+                        
+                            </tr>
+                        </tbody>';
+                            }
+                        } else {
+                            echo "<h2>Data Not Found</h2>";
+                        }
+                    }
+                    ?>
+                </table>
+            </div>
         </div>
     </div>
 </body>
 
 </html>
-
-
-
-<!-- <!DOCTYPE html>
-<html lang=" en">
-
-                    <head>
-                        <meta charset="UTF-8">
-                        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-                        <title>Doctor Page</title>
-                        <link rel="stylesheet" href="../styles/homes.css">
-                    </head>
-
-                    <body>
-
-                        <div class="banner">
-                            <div class="navbar">
-                                <h2><?php
-                                    session_start();
-                                    $_SESSION = $_GET;
-                                    if (isset($_SESSION['name'])) {
-                                        echo "welcome " . $_SESSION['name'];
-                                    }
-                                    ?>
-                                </h2>
-                                <ul>
-                                    <li><a href="display_users.php">Patients</a></li>
-                                    <li><a href="display_pharmacists.php">Pharmacists</a></li>
-                                    <li><a href="display_drugs.php?user_type=doctor">Drugs</a></li>
-                                </ul>
-                            </div>
-
-                            <div class="content">
-                                <h1>MANAGE THIS SYSTEM</h1>
-                                <p><span>Note:</span> This page is for authorized users only!</p>
-
-                                <div class="search">
-                                    <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
-                                        <input type="text" name="patient" id="search_patient">
-                                        <button type="submit" onclick="<?php echo $onClickHandler; ?>"><span></span>SEARCH PATIENT</button>
-                                    </form>
-                                    <?php
-                                    if (isset($_POST['patient'])) {
-                                        $onClickHandler = "<h2>Hello Patient</h2>";
-                                    } else {
-                                        $onClickHandler = "alert('No such patient exists')";
-                                    }
-                                    ?>
-                                </div>
-
-                            </div>
-                        </div>
-
-                        <!-- <p>This is the doctor Page</p>
-
-    <a href="./display_users.php">Display All Users</a>
-
-    <a href="./doctor_form.html">Add A Doctor</a>
-    <a href="./pharmacist_form.html">Add A Pharmacist</a> -->
-                    </body>
-
-</html> -->
