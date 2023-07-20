@@ -34,12 +34,12 @@
                 <label for="remember-forgot">
                     <input type="checkbox" name="remember-forgot" id="remember-forgot">Remember Me
                 </label>
-                <a href="patient_form.html">Forgot Password?</a>
+                <a href="register.php">Forgot Password?</a>
             </div>
             <input class="submit-btn" type="submit" value="Login">
 
             <div class="register-link">
-                <p>Don't have an account? <a href="./patient_form.html">Register</a></p>
+                <p>Don't have an account? <a href="./register.php?user_type=<?php echo $_GET['user_type']; ?>">Register</a></p>
             </div>
         </form>
     </div>

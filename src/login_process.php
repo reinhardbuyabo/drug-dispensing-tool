@@ -25,13 +25,19 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             header('Location: ' . $redirect_url);
             exit;
         } else if ($_SESSION['user_type'] == 'patient') {
-            header("Location: user.php");
+            $redirect_url = 'patient.php?' . http_build_query(array('name' => $_SESSION['username']));
+
+            header('Location: ' . $redirect_url);
             exit;
         } else if ($_SESSION['user_type'] == 'pharmacist') {
-            header('Location: pharmacist.php');
+            $redirect_url = 'pharmacist.php?' . http_build_query(array('name' => $_SESSION['username']));
+
+            header('Location: ' . $redirect_url);
             exit;
         } else if ($_SESSION['user_type'] == 'doctor') {
-            header('Location: doctor.php');
+            $redirect_url = 'doctor.php?' . http_build_query(array('name' => $_SESSION['username']));
+
+            header('Location: ' . $redirect_url);
             exit;
         }
     } else {
