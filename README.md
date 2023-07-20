@@ -7,17 +7,26 @@ A simple web based application that provides an interface that enables customers
 - [x] Login System
 - [x] Registration System
 - [ ] Forgot Password Service
-- [x] Admin Site
-  - [x] Admin Database
-- [x] Doc
-- [x] Pharmacist Interface
-  - [x] Pharmacist
+- [x] Admin's Interface
+  - [x] Admin's Table
+- [x] Doctor Interface
+  - [x] Doctor's Table
+  - [x] Search For Patient Functionality
+- [ ] Pharmacist's Interface
+  - [x] Pharmacist's Table
+  - [ ] View All Outrolled Prescriptions
 - [x] Patient Interface
-  - [x] Patient Database
-- [ ] Products(Medicine) To Be Displayed
-  - [ ] Products Database
-  - [x] [ER-Diagram](#er-diagram "Goto ER-Diagram")
-- [x] [Use-Case-Diagram](#use-case-diagram "Goto Use-Case Diagram")
+  - [x] Patient Table
+    - [ ] Should Have a Foreign Key, Linking it to the Drug's Table (One To Many Relationship - Where a Patient can have a number of prescriptions, and one prescription is linked to only one patient)
+  - [ ] Patient's Prescriptions
+  - [ ] Patient's History (SQL Views)
+- [x] Drugs To Be Displayed
+  - [x] Drugs Database
+- [ ] Prescription Service
+- [ ] Dispensing Service
+- [ ] History
+- [x] [ER-Diagram](#er-diagram "Goto ER-Diagram") Needs Updating
+- [x] [Use-Case-Diagram](#use-case-diagram "Goto Use-Case Diagram") Needs Updating
 - [x] [UML-Class Diagram](#uml-class-diagram "Goto UML-Class Diagram")
 - [x] Wireframes
 
