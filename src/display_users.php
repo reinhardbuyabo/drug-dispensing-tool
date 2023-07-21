@@ -11,42 +11,107 @@
 <body>
     <div class="wrapper">
         <table class="content-table">
-            <thead>
-                <tr>
-                    <th>First Name</th>
-                    <th>Last Name</th>
-                    <th>Email</th>
-                    <th>Phone</th>
-                    <th>Edit</th>
-                    <th>Delete</th>
-                </tr>
-            </thead>
+
             <?php
             // Retrieve user details from the database
             require_once("connect.php");
 
-            // Pagination configuration
-            $itemsPerPage = 10; // Number of items to display per page
-            $currentPage = isset($_GET['page']) ? $_GET['page'] : 1; // Get the current page number
+            if ($_GET['user_type'] == 'doctor' or $_GET['user_type'] == 'admin') {
+                $tHead1 = '<thead>
+                        <tr>
+                            <th>First Name</th>
+                            <th>Last Name</th>
+                            <th>Email</th>
+                            <th>Phone</th>
+                            <th>Edit</th>
+                            <th>Delete</th>
+                        </tr>
+                    </thead>';
+                echo $tHead1;
 
-            $offset = ($currentPage - 1) * $itemsPerPage; // Calculate the offset
+                // Pagination configuration
+                $itemsPerPage = 10; // Number of items to display per page
+                $currentPage = isset($_GET['page']) ? $_GET['page'] : 1; // Get the current page number
 
-            $query = "SELECT * FROM patient LIMIT $offset, $itemsPerPage";
-            $result = mysqli_query($conn, $query);
+                $offset = ($currentPage - 1) * $itemsPerPage; // Calculate the offset
 
-            if (mysqli_num_rows($result) > 0) {
-                while ($row = mysqli_fetch_assoc($result)) {
-                    echo "<tr>";
-                    echo "<td>" . $row['first_name'] . "</td>";
-                    echo "<td>" . $row['last_name'] . "</td>";
-                    echo "<td>" . $row['email'] . "</td>";
-                    echo "<td>" . $row['phone'] . "</td>";
-                    echo "<td><a href='edit.php?id=" . $row['patient_id'] . "'>Edit</a></td>";
-                    echo "<td><a href='delete.php?id=" . $row['patient_id'] . "'>Delete</a></td>";
-                    echo "</tr>";
+                $query = "SELECT * FROM patient LIMIT $offset, $itemsPerPage";
+                $result = mysqli_query($conn, $query);
+
+                if (mysqli_num_rows($result) > 0) {
+                    while ($row = mysqli_fetch_assoc($result)) {
+                        echo "<tr>";
+                        echo "<td>" . $row['first_name'] . "</td>";
+                        echo "<td>" . $row['last_name'] . "</td>";
+                        echo "<td>" . $row['email'] . "</td>";
+                        echo "<td>" . $row['phone'] . "</td>";
+                        echo "<td><a href='edit.php?id=" . $row['patient_id'] . "'>Edit</a></td>";
+                        echo "<td><a href='delete.php?id=" . $row['patient_id'] . "'>Delete</a></td>";
+                        echo "</tr>";
+                    }
+                } else {
+                    echo "<tr><td colspan='6'>No users found.</td></tr>";
                 }
-            } else {
-                echo "<tr><td colspan='6'>No users found.</td></tr>";
+            } else if ($_GET['user_type'] == 'pharmacist') {
+                $tHead2 = '<thead>
+                        <tr>
+                            <th>First Name</th>
+                            <th>Last Name</th>
+                            <th>Username</th>
+                            <th>Drug Name</th>
+                            <th>Dosage</th>
+                            <th>Price</th>
+                            <th>Dispense</th>
+                        </tr>
+                    </thead>';
+                echo $tHead2;
+                // Pagination configuration
+                $itemsPerPage = 10; // Number of items to display per page
+                $currentPage = isset($_GET['page']) ? $_GET['page'] : 1; // Get the current page number
+
+                $offset = ($currentPage - 1) * $itemsPerPage; // Calculate the offset
+
+                $query = "SELECT * FROM patient LIMIT $offset, $itemsPerPage";
+                $result = mysqli_query($conn, $query);
+
+                if (mysqli_num_rows($result) > 0) {
+                    while ($row = mysqli_fetch_assoc($result)) {
+                        $prescription_query = "SELECT * FROM prescriptions WHERE patient_id = " . $row['patient_id'];
+                        $prescription_result = mysqli_query($conn, $prescription_query);
+
+                        // $res = (mysqli_num_rows($prescription_result) > 0) ? mysqli_fetch_assoc($prescription_result) : null;
+
+                        if (mysqli_num_rows($prescription_result) > 0) {
+                            $res = mysqli_fetch_assoc($prescription_result);
+                            $drug_query = "SELECT generic_name FROM drug WHERE drug_id = " . $res['drug_id'];
+                            $drug_res = mysqli_query($conn, $drug_query);
+                            echo "<tr>";
+                            echo "<td>" . $row['first_name'] . "</td>";
+                            echo "<td>" . $row['last_name'] . "</td>";
+                            echo "<td>" . $row['username'] . "</td>";
+                            echo "<td>" . mysqli_fetch_assoc($drug_res)['generic_name'] . "</td>";
+                            echo "<td>" . $res['dosage_amount_gms'] . "</td>";
+                            echo "<td>" . $res['price'] . "</td>";
+                            echo "<td>Dispense</td";
+
+                            echo "</tr>";
+                        } else {
+                            $res = null;
+                            echo "<tr>";
+                            echo "<td>" . $row['first_name'] . "</td>";
+                            echo "<td>" . $row['last_name'] . "</td>";
+                            echo "<td>" . $row['username'] . "</td>";
+                            echo "<td>" . $res . "</td>";
+                            echo "<td>" . $res . "</td>";
+                            echo "<td>" . $res . "</td>";
+                            echo "<td>Cannot Dispense</td";
+
+                            echo "</tr>";
+                        }
+                    }
+                } else {
+                    echo "<tr><td colspan='6'>No users found.</td></tr>";
+                }
             }
             ?>
         </table>

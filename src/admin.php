@@ -20,7 +20,7 @@
             </h2>
             <ul>
                 <li><a href="display_doctors.php">Doctors</a></li>
-                <li><a href="display_users.php">Patients</a></li>
+                <li><a href="display_users.php?user_type=admin">Patients</a></li>
                 <li><a href="display_pharmacists.php">Pharmacists</a></li>
                 <li><a href="display_drugs.php?user_type=admin">Drugs</a></li>
             </ul>

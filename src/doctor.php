@@ -26,7 +26,7 @@ session_start();
                 ?>
             </h2>
             <ul>
-                <li><a href="display_users.php">Patients</a></li>
+                <li><a href="display_users.php?user_type=doctor">Patients</a></li>
                 <li><a href="display_pharmacists.php">Pharmacists</a></li>
                 <li><a href="display_drugs.php?user_type=admin">Drugs</a></li>
             </ul>
