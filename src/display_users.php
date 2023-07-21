@@ -69,7 +69,7 @@
         ?>
 
         <p>
-            <a href="./patient_form.html">Add User</a>
+            <a href="./register.php?user_type=patient">Add User</a>
         </p>
     </div>
 </body>
