@@ -18,5 +18,3 @@ if (!isset($_SESSION['username']) || $_SESSION['user_type'] != 'patient') {
     <h2>Welcome <?php echo $_SESSION['username']; ?></h2>
     <p>This is the user page</p>
 </body>
-
-</html>

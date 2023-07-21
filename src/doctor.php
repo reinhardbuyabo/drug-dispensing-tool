@@ -21,11 +21,12 @@ session_start();
             <h2><?php
                 if (isset($_GET['name'])) {
                     echo "welcome " . $_GET['name'];
+                    $_SESSION["name"] = $_GET['name'];
                 }
                 ?>
             </h2>
             <ul>
-                <li><a href="display_users.php">Patients</a></li>
+                <li><a href="display_users.php?user_type=doctor">Patients</a></li>
                 <li><a href="display_pharmacists.php">Pharmacists</a></li>
                 <li><a href="display_drugs.php?user_type=admin">Drugs</a></li>
             </ul>
@@ -55,10 +56,12 @@ session_start();
 
                         $sql = "SELECT * FROM patient WHERE username = '$search'";
                         $result = mysqli_query($conn, $sql);
+                        $drugs = "SELECT drug_id, generic_name FROM drug";
+                        $fetched_drugs = mysqli_query($conn, $drugs);
 
                         if ($result) {
                             $num = mysqli_num_rows($result);
-                            echo $num;
+                            // echo $num;
 
                             if (mysqli_num_rows($result) > 0) {
                                 echo '<thead>
@@ -75,6 +78,12 @@ session_start();
 
                                 $row = mysqli_fetch_assoc($result);
 
+                                $drugList = ''; // Initialize an empty string
+
+                                while ($drug = mysqli_fetch_assoc($fetched_drugs)) {
+                                    $drugList .= '<li><a href="prescribe.php?drug_id=' . $drug['drug_id'] . '&patient_id=' . $row['patient_id'] . '">' . $drug['generic_name'] . '</a></li>';
+                                }
+
                                 echo '<tbody>
                             <tr>
                                 <td>' . $row['patient_id'] . '</td>
@@ -83,7 +92,15 @@ session_start();
                                 <td>' . $row['email'] . '</td>
                                 <td>' . $row['phone'] . '</td>
                                 <td>' . $row['username'] . '</td>
-                                <td><a href="prescribe.php">Presribe Drug</a></td>
+                                <td>
+                                    <ul class="menu">
+                                        <li><a href="#"><a href="#">Prescribe Drug</a></a>
+                                            <ul class="submenu">
+                                                ' . $drugList . '
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </td>
                         
                             </tr>
                         </tbody>';
