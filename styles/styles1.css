@@ -1,0 +1,198 @@
+/* Reset styles */
+/* Add these CSS rules to your existing styles.css file */
+
+h1, h2, h3, h4, h5, h6 {
+  color: #fff;
+}
+
+a {
+  color: #fff;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+header {
+  background-color: #333;
+  color: #fff;
+  padding: 20px;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 28px;
+}
+
+.header-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  margin: 0;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li {
+  margin-left: 10px;
+}
+
+nav.right-align {
+  text-align: right;
+}
+
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+}
+
+nav ul li a.active {
+  font-weight: bold;
+}
+
+nav ul li.dropdown {
+  position: relative;
+}
+
+nav ul li .dropdown-content.right-align {
+  right: 0;
+  left: auto;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: #333;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+section.hero {
+  background-color: #f1efef;
+  padding: 40px;
+  text-align: center;
+}
+
+section.hero h2 {
+  color: #333;
+  margin-bottom: 20px;
+  font-size: 50px;
+}
+
+section.hero p {
+  color: #333;
+  margin-bottom: 30px;
+  font-size: 40px;
+}
+
+section.hero .btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #333;
+  color: #f8f5f5;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+section.features {
+  padding: 40px;
+  text-align: center;
+}
+
+section.features h2 {
+  margin-bottom: 40px;
+  font-size: 24px;
+  color: #000;
+}
+
+.feature {
+  color: #333;
+  display: inline-block;
+  width: 30%;
+  margin-bottom: 40px;
+  padding: 20px;
+  background-color: #f9f9f9;
+  text-align: center;
+}
+
+.feature i {
+  font-size: 48px;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.feature h3 {
+  color: #333;
+  margin-bottom: 10px;
+  font-size: 20px;
+}
+
+section.testimonials {
+  padding: 40px;
+  text-align: center;
+  border: 0px solid #000;
+  background-color: #fff;
+}
+
+section.testimonials h2 {
+  color: #000;
+  margin-bottom: 40px;
+  font-size: 35px;
+}
+
+.testimonial {
+  margin-bottom: 40px;
+}
+
+.testimonial img {
+  width: 100px;
+  border-radius: 50%;
+}
+
+.testimonial blockquote {
+  margin: 0;
+  padding: 0;
+}
+
+.testimonial blockquote p {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.testimonial blockquote cite {
+  font-size: 14px;
+  font-style: italic;
+}
+
+footer {
+  background-color: #333;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+}
+
+footer p {
+  margin: 0;
+}
