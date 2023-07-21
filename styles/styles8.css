@@ -9,7 +9,7 @@ body {
   font-family: Arial, sans-serif;
   font-size: 16px;
   line-height: 1.6;
-  color: #fff;
+  color: #333;
 }
 
 /* Set background and text color for the body */
@@ -31,8 +31,6 @@ header {
   justify-content: space-between;
   padding: 10px 0;
   border-bottom: 1px solid #ccc;
-  background-color: #333;
-  color: #f9f9f9;
 }
 
 header h1 {
@@ -53,7 +51,7 @@ header nav ul li:first-child {
 }
 
 header nav ul li a {
-  color: #f9f9f9;
+  color: #fff;
   text-decoration: none;
 }
 
@@ -67,13 +65,34 @@ section h2 {
   margin-bottom: 10px;
 }
 
-section p {
-  margin-bottom: 20px;
+/* Drugs styles */
+.drugs {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-gap: 20px;
 }
 
-section ul {
-  list-style: disc;
-  margin-left: 20px;
+.drug {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.drug img {
+  max-width: 100%;
+  border-radius: 4px;
+  margin-bottom: 10px;
+}
+
+.drug h3 {
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+
+.drug p {
+  margin-bottom: 10px;
 }
 
 /* Button styles */
@@ -97,7 +116,6 @@ footer {
   padding: 10px 0;
   border-top: 1px solid #ccc;
   background-color: #333;
-  color: #f9f9f9;
 }
 
 /* Responsive styles */

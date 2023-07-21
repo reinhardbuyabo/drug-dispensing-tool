@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Buy Drugs</title>
+  <link rel="stylesheet" href="styles_sheet/styles8.css">
+  <style>
+    body {
+      background-image: url("images/hero_1.jpg");
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Buy Drugs</h1>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="prescribedrugs.html">Prescribed</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="login.html">Login</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <section>
+      <h2>Available Drugs</h2>
+      <div class="drugs">
+        <div class="drug">
+          <img src="images/p-1-removebg-preview.png" alt="Drug 1">
+          <h3>Drug 1</h3>
+          <p>Drug 1 is an effective medication that treats various ailments. </p>
+          <button class="btn">Buy Now</button>
+        </div>
+        <div class="drug">
+          <img src="images/p-2-removebg-preview.png" alt="Drug 2">
+          <h3>Drug 2</h3>
+          <p>Drug 2 is a prescription medication that provides relief from chronic pain. </p>
+          <button class="btn">Buy Now</button>
+        </div>
+        <div class="drug">
+          <img src="images/p-3-removebg-preview.png" alt="Drug 3">
+          <h3>Drug 3</h3>
+          <p>Drug 3 is an over-the-counter medicine that aids in digestion and relieves stomach discomfort. </p>
+          <button class="btn">Buy Now</button>
+        </div>
+        <div class="drug">
+          <img src="images/product_01.png" alt="Drug 4">
+          <h3>Drug 4</h3>
+          <p>Drug 4 is a topical cream used for skin conditions.</p>
+          <button class="btn">Buy Now</button>
+        </div>
+        <!-- Add more drugs as needed -->
+        <div class="drug">
+          <img src="images/product_02.png" alt="Drug 5">
+          <h3>Drug 5</h3>
+          <p>Drug 5 is a widely-used medication for respiratory conditions.</p>
+          <button class="btn">Buy Now</button>
+        </div>
+        <div class="drug">
+          <img src="images/product_03.png" alt="Drug 6">
+          <h3>Drug 6</h3>
+          <p>Drug 6 is an antipyretic medicine for fever reduction.</p>
+          <button class="btn">Buy Now</button>
+        </div>
+        <div class="drug">
+          <img src="images/product_04.png" alt="Drug 7">
+          <h3>Drug 7</h3>
+          <p>Drug 7 is a painkiller that provides quick relief from mild to moderate pain.</p>
+          <button class="btn">Buy Now</button>
+        </div>
+        <div class="drug">
+          <img src="images/product_05.png" alt="Drug 8">
+          <h3>Drug 8</h3>
+          <p>Drug 8 is an antihistamine used to alleviate allergy symptoms.</p>
+          <button class="btn">Buy Now</button>
+        </div>
+        <!-- Add more drugs as needed -->
+      </div>
+    </section>
+
+    <!-- Rest of the content -->
+
+    <footer>
+      <p>&copy; 2023 My Website. All rights reserved.</p>
+    </footer>
+  </div>
+
+  <script>
+    // JavaScript for rotating drugs every 10 seconds
+    const drugs = document.querySelectorAll('.drug');
+    let currentIndex = 0;
+
+    function showNextDrug() {
+      drugs[currentIndex].classList.remove('active');
+      currentIndex = (currentIndex + 1) % drugs.length;
+      drugs[currentIndex].classList.add('active');
+    }
+
+    setInterval(showNextDrug, 10000); // Rotate every 10 seconds (10000ms)
+  </script>
+</body>
+</html>
