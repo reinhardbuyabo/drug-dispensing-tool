@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Buy Drugs</title>
+  <link rel="stylesheet" href="styles_sheet/styles7.css">
+  <style>
+    body {
+      background-image: url("images/hero_1.jpg");
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Buy Drugs</h1>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="prescribedrugs.html">Prescribed</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="login.html">Login</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <section>
+      <h2>Available Drugs</h2>
+      <div class="drugs">
+        <div class="drug">
+          <img src="images/p-1-removebg-preview.png" alt="Drug 1">
+          <h3>Drug 1</h3>
+          <p>Drug 1 is an effective medication that treats various ailments. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          <button class="btn">Buy Now</button>
+        </div>
+        <div class="drug">
+          <img src="images/p-2-removebg-preview.png" alt="Drug 2">
+          <h3>Drug 2</h3>
+          <p>Drug 2 is a prescription medication that provides relief from chronic pain. Suspendisse a magna vitae dui viverra consectetur eget nec metus.</p>
+          <button class="btn">Buy Now</button>
+        </div>
+        <div class="drug">
+          <img src="images/p-3-removebg-preview.png" alt="Drug 3">
+          <h3>Drug 3</h3>
+          <p>Drug 3 is an over-the-counter medicine that aids in digestion and relieves stomach discomfort. Ut sodales justo vitae velit vulputate.</p>
+          <button class="btn">Buy Now</button>
+        </div>
+        <div class="drug">
+          <img src="images/product_01.png" alt="Drug 4">
+          <h3>Drug 4</h3>
+          <p>Drug 4 is a topical cream used for skin conditions. Aliquam scelerisque mi vitae metus dignissim, ut malesuada urna dapibus.</p>
+          <button class="btn">Buy Now</button>
+        </div>
+        <!-- Add more drugs as needed -->
+      </div>
+    </section>
+
+    <!-- Rest of the content -->
+
+    <footer>
+      <p>&copy; 2023 My Website. All rights reserved.</p>
+    </footer>
+  </div>
+
+  <script>
+    // JavaScript for rotating drugs every 5 seconds
+    const drugs = document.querySelectorAll('.drug');
+    let currentIndex = 0;
+
+    function showNextDrug() {
+      drugs[currentIndex].classList.remove('active');
+      currentIndex = (currentIndex + 1) % drugs.length;
+      drugs[currentIndex].classList.add('active');
+    }
+
+    setInterval(showNextDrug, 5000); // Rotate every 5 seconds (5000ms)
+  </script>
+</body>
+</html>
