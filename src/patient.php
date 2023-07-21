@@ -12,7 +12,7 @@ if (!isset($_SESSION['username']) || $_SESSION['user_type'] != 'patient') {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>User Page</title>
+    <title>Patient Page</title>
     <link rel="stylesheet" href="../styles/homes.css">
 </head>
 
@@ -48,7 +48,7 @@ if (!isset($_SESSION['username']) || $_SESSION['user_type'] != 'patient') {
                 $patient_id = mysqli_fetch_assoc($user_res)['patient_id'];
 
                 // $drug_query = "SELECT generic_name FROM drug WHERE drug_id IN (SELECT drug_id FROM prescriptions WHERE patient_id = " . $row['patient_id'] . ")";
-                $drug_query = "SELECT generic_name, dosage_amount_gms FROM (drug LEFT JOIN prescriptions ON drug.drug_id = prescriptions.drug_id) LEFT JOIN patient ON prescriptions.patient_id = patient.patient_id WHERE patient.patient_id = " . $patient_id;
+                $drug_query = "SELECT generic_name, dosage_amount_gms, total_price FROM ((drug LEFT JOIN prescriptions ON drug.drug_id = prescriptions.drug_id) LEFT JOIN patient ON prescriptions.patient_id = patient.patient_id) INNER JOIN dispensations ON dispensations.patient_id = patient.patient_id WHERE patient.patient_id = " . $patient_id;
                 $drug_res = mysqli_query($conn, $drug_query);
 
                 // print_r($drug_res);
@@ -58,6 +58,8 @@ if (!isset($_SESSION['username']) || $_SESSION['user_type'] != 'patient') {
                 while ($drug = mysqli_fetch_assoc($drug_res)) {
                     $name = $drug['generic_name'];
                     $dosage = $drug['dosage_amount_gms'];
+                    $total_price = $drug['total_price'];
+
                     $drugList .= '
                     <p class="input-field">
                         <label> Drug ' . ++$count  . '</label>
@@ -65,6 +67,9 @@ if (!isset($_SESSION['username']) || $_SESSION['user_type'] != 'patient') {
                     </p>
                     <p class="input-field">
                         <input type="text" value="' . $dosage . ' gms" readonly>
+                    </p>
+                    <p class="input-field">
+                        <input type="text" value="Ksh ' . $total_price . '" readonly>
                     </p>
                     ';
                 }

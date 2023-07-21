@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>User List</title>
+    <title>Display Pharmacist</title>
     <link rel="stylesheet" href="../styles/tables.css">
 </head>
 
