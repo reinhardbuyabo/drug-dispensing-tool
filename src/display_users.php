@@ -59,8 +59,7 @@
                             <th>Last Name</th>
                             <th>Username</th>
                             <th>Drug Name</th>
-                            <th>Dosage</th>
-                            <th>Price</th>
+                            
                             <th>Dispense</th>
                         </tr>
                     </thead>';
@@ -83,16 +82,42 @@
 
                         if (mysqli_num_rows($prescription_result) > 0) {
                             $res = mysqli_fetch_assoc($prescription_result);
-                            $drug_query = "SELECT generic_name FROM drug WHERE drug_id = " . $res['drug_id'];
+                            $drug_query = "SELECT generic_name FROM drug WHERE drug_id IN (SELECT drug_id FROM prescriptions WHERE patient_id = " . $row['patient_id'] . ")";
+
                             $drug_res = mysqli_query($conn, $drug_query);
+
+
+                            $drugList = ''; // Initialize an empty string
+
+                            $drugs_array = array();
+                            $total_price = 0;
+                            while ($drug = mysqli_fetch_assoc($drug_res)) {
+                                $drugList .= '<li class="item">' . $drug['generic_name'] . '</li>';
+                                array_push($drugs_array, $drug['generic_name']);
+                            }
+
                             echo "<tr>";
                             echo "<td>" . $row['first_name'] . "</td>";
                             echo "<td>" . $row['last_name'] . "</td>";
                             echo "<td>" . $row['username'] . "</td>";
-                            echo "<td>" . mysqli_fetch_assoc($drug_res)['generic_name'] . "</td>";
-                            echo "<td>" . $res['dosage_amount_gms'] . "</td>";
-                            echo "<td>" . $res['price'] . "</td>";
-                            echo "<td>Dispense</td";
+                            echo '<td>
+                            <ul class="menu">
+                                <li><a href="#"><a href="#">Prescribe Drug</a></a>
+                                    <ul class="submenu">
+                                        ' . $drugList . '
+                                    </ul>
+                                </li>
+                            </ul>
+                            </td>';
+                            // echo "<td>" . $res['dosage_amount_gms'] . "</td>";
+                            // echo "<td>" . $res['price'] . "</td>";
+
+                            $serializedData = serialize($drugs_array);
+                            $encodedData = urlencode($serializedData);
+                            $total_price += $res['price'];
+                            $redirect_url = 'dispense.php?' . http_build_query(array('drugs' => $encodedData, 'patient_id' => $row['patient_id'], 'total_price' => $total_price));
+
+                            echo '<td><a href="' . $redirect_url . '">Dispense</a></td';
 
                             echo "</tr>";
                         } else {
@@ -102,8 +127,8 @@
                             echo "<td>" . $row['last_name'] . "</td>";
                             echo "<td>" . $row['username'] . "</td>";
                             echo "<td>" . $res . "</td>";
-                            echo "<td>" . $res . "</td>";
-                            echo "<td>" . $res . "</td>";
+                            // echo "<td>" . $res . "</td>";
+                            // echo "<td>" . $res . "</td>";
                             echo "<td>Cannot Dispense</td";
 
                             echo "</tr>";
