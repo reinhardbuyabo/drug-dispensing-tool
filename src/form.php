@@ -8,13 +8,13 @@ if (isset($_POST['submit'])) {
     $phone = $_POST['phone'];
     $user_type = $_POST['user_type'];
     if ($user_type == 'patient') {
-        $id = $_POST['patient_id'];
+        $id = $_POST['id'];
     } else if ($user_type == 'doctor') {
-        $id = $_POST['doctor_id'];
+        $id = $_POST['id'];
     } else if ($user_type == 'pharmacist') {
-        $id = $_POST['pharmacist_id'];
+        $id = $_POST['id'];
     } else if ($user_type == 'admin') {
-        $id = $_POST['admin_id'];
+        $id = $_POST['id'];
     }
 
     $username = $_POST['username'];
@@ -29,7 +29,7 @@ if (isset($_POST['submit'])) {
         echo "Contact Records Inserted";
         // var_dump($_SESSION);
         if ($user_type == 'patient') {
-            echo "<br><a href='display_users.php'>Display Users</a>";
+            echo "<br><a href='display_users.php?name=" . $username . "'>Display Users</a>";
         } else if ($user_type == 'doctor') {
             echo "<br><a href='display_doctors.php'>Display Doctors</a>";
         } else if ($user_type == 'pharmacist') {

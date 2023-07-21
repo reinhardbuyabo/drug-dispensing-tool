@@ -34,7 +34,7 @@
                 <i class="fa-solid fa-phone-flip"></i>
             </div>
             <div class="input-field">
-                <input placeholder="Patient ID" type="text" id="patient_id" name="patient_id" required>
+                <input placeholder="ID" type="text" id="patient_id" name="id" required>
                 <i class="fa-solid fa-hashtag"></i>
             </div>
             <div class="input-field">
