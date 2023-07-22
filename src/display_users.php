@@ -17,6 +17,7 @@
             require_once("connect.php");
 
             if ($_GET['user_type'] == 'doctor' or $_GET['user_type'] == 'admin') {
+                $user = $_GET['user_type'];
                 $tHead1 = '<thead>
                         <tr>
                             <th>First Name</th>
@@ -152,7 +153,7 @@
 
         echo "<div>";
         for ($i = 1; $i <= $totalPages; $i++) {
-            echo "<a href='?page=$i'>$i</a> ";
+            echo "<a href='?user_type=$user&page=$i'>$i</a> ";
         }
         echo "</div>";
         mysqli_close($conn);
