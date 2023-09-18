@@ -1,4 +1,6 @@
 <?php
+include '../inc/header.php';
+
 if (isset($_POST['submit'])) {
     $con = mysqli_connect('localhost', 'root', '', 'drug_dispensing_tool');
 
@@ -38,6 +40,37 @@ if (isset($_POST['submit'])) {
             echo "<br><a href='admin.php?name=" . $username . "'>Admin Page</a>";
         }
     }
+
+?>
+
+    <div id="toastBox">
+
+    </div>
+
+    <script>
+        let toast = document.getElementById('toastBox');
+        let successMsg = 'Successfully registered!';
+        let errorMsg = 'Error encountered';
+        let invalid = 'Invalid Input';
+
+        function showToast(msg) {
+            let toast = document.createElement('div');
+            toast.classList.add('toast');
+            toast.innerHTML = msg;
+            toastBox.appendChild(toast);
+        }
+
+        setTimeout(() => {
+            toast.remove()
+        }, 3000);
+
+        showToast('User Successfully Registered');
+    </script>
+
+
+
+<?php
+    include '../inc/footer.php';
 } else {
     echo "Are you a genuine visitor?";
 }
