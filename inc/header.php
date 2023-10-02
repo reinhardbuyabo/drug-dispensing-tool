@@ -4,7 +4,7 @@
 <head>
     <title><?php echo 'Home'; ?></title>
 
-    <link rel="stylesheet" href="../styles/styles1.css">
+    <link rel="stylesheet" href="../dist/style.css">
 
 </head>
 
