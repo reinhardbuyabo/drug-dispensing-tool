@@ -1,46 +1,75 @@
 <?php include '../inc/header.php'; ?>
 
 <section class="hero">
-  <h2>Welcome to MedSource</h2>
-  <p>Effective Medicine, New Medicine Everyday</p>
-</section>
+  <div class="container">
+    <div class="hero__image"></div>
 
-<section class="features">
-  <h2>Features</h2>
-  <div class="feature">
-    <i class="fa fa-check-circle"></i>
-    <h3>FAST DELIVERY</h3>
-    <p>With MedSource's Fast Delivery service, you can expect your orders to arrive at your doorstep in record time. We prioritize efficiency and ensure that your products are dispatched promptly after you place your order. Whether it's urgent medication or everyday essentials, our dedicated delivery team works round-the-clock to make sure you get what you need when you need it</p>
-  </div>
-  <div class="feature">
-    <i class="fa fa-check-circle"></i>
-    <h3>SUPPORT 24/7</h3>
-    <p>At MedSource, we recognize that healthcare needs can emerge at any time of day or night. That is why our Support team is available 24 hours a day, 7 days a week. Our pleasant and educated customer support team is accessible 24 hours a day, 7 days a week, ready to answer your questions, provide help, and ensure a smooth and satisfying experience with our services.</p>
-  </div>
-  <div class="feature">
-    <i class="fa fa-check-circle"></i>
-    <h3>MEDICATION DISPENSING</h3>
-    <p>Our Medication Dispensing service is intended to improve and simplify your healthcare routine. Say goodbye to the trouble of managing several prescriptions, because MedSource will do it for you. Our skilled pharmacists carefully package and label your prescription medications, making it easy to adhere to your treatment plan precisely. We also provide digital tracking and regular reminders, so you never miss a dose and can focus on your well-being with confidence.</p>
+    <div class="hero__text container--pall">
+      <h1>Next generation medication!!!!</h1>
+      <p>
+        Take your health to another level. Your Medsource account will be a
+        one-stop-arena for health-related matters and much
+        more.
+      </p>
+      <a href="./register.php?user_type=patient" class="button hero__cta">Register</a>
+    </div>
   </div>
 </section>
 
-<section class="testimonials">
-  <h2>Testimonials</h2>
-  <div class="testimonial">
-    <img src="images/person_1.jpg" alt="Testimonial Avatar">
-    <blockquote>
-      <p>"MedSource has been a lifesaver! Their fast delivery service is incredible, and I always receive my medications on time. The 24/7 support is truly commendable; the team is so helpful and understanding. I highly recommend their medication dispensing service, it has made managing my prescriptions so much easier."</p>
-      <cite>John Doe</cite>
-    </blockquote>
-  </div>
-  <div class="testimonial">
-    <img src="images/person_2.jpg" alt="Testimonial Avatar">
-    <blockquote>
-      <p>"I am beyond impressed with MedSource's fast and reliable delivery. I had an emergency situation, and they delivered the medication within hours. The 24/7 support was there to guide me through the process, and their assistance was invaluable. I feel secure knowing that my health is in good hands with QuickMedRx's medication dispensing."</p>
-      <cite>Jane Smith</cite>
-    </blockquote>
+<section class="feature">
+  <div class="feature__content container container--pall">
+    <div class="feature__intro">
+      <h2>Why choose MedSource?</h2>
+      <p>
+        We leverage Cutting Edge Technology to provide modern health services at a reasonable cost. Control your prescriptions like never before.
+      </p>
+    </div>
+
+    <div class="feature__grid">
+      <div class="feature__item">
+        <div class="feature__icon">
+          <img width="200" height="200" src="../assets/images/depositphotos_28656933-stock-photo-track-it-words-package-tracking.jpg" />
+        </div>
+        <div class="feature__title">Easy Track of Your Prescriptions</div>
+        <div class="feature__description">
+          Our modern web and mobile applications allow you to keep track of
+          your prescriptions wherever you are in the world.
+        </div>
+      </div>
+
+      <div class="feature__item">
+        <div class="feature__icon">
+          <img width="200" height="200" src="../assets/images/depositphotos_31818695-stock-photo-keep-it-simple-message.jpg" />
+        </div>
+        <div class="feature__title">Simple Interface</div>
+        <div class="feature__description">
+          See exactly where your prescriptions are. Receive
+          updates as per pharmacists' and doctors' recommendations.
+        </div>
+      </div>
+
+      <div class="feature__item">
+        <div class="feature__icon">
+          <img height="200" width="200" src="../assets/images/img-how-long-does-onboarding-take-2000x1130-1.png" />
+        </div>
+        <div class="feature__title">Fast Onboarding</div>
+        <div class="feature__description">
+          We don’t do branches. Open your account in minutes online and
+          start taking control of your prescriptons right away. Visit our Health centres for serious issues.
+        </div>
+      </div>
+
+      <div class="feature__item">
+        <div class="feature__icon"><img height="200" width="200" src="../assets/images/istockphoto-96379220-612x612.jpg" /></div>
+        <div class="feature__title">Open API</div>
+        <div class="feature__description">
+          Manage your prescriptions. Tracking your drug history has never been easier.
+        </div>
+      </div>
+    </div>
   </div>
 </section>
+
 <!-- ... Rest of the code ... -->
 
 <?php include '../inc/footer.php'; ?>

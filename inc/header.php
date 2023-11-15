@@ -9,20 +9,30 @@
 </head>
 
 <body>
-    <div class="container">
-        <header>
-            <div class="header-content">
-                <h1 class="logo"><img src="images/logo.png" alt="">MedSource</h1>
-                <nav>
-                    <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="about.html">About</a></li>
-                        <li><a href="buy.html">Buy</a></li>
-                        <li><a href="contact.html">Contact</a></li>
-                        <li><a href="login.html">Login</a></li>
-                    </ul>
-                </nav>
-            </div>
-        </header>
 
-        <div>
+    <header>
+        <div class="header-content">
+            <nav class="container container--pall flex flex-jc-sb flex-ai-c">
+                <a href="../src/" class="header__logo">
+                    <img src="../assets/images/logo.png" alt="Medsource" />
+                </a>
+
+                <a id="btnHamburger" href="#" class="header__toggle hide-for-desktop">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </a>
+
+                <div class="header__links hide-for-mobile">
+                    <a href="#">Home</a>
+                    <a href="#">About</a>
+                    <a href="#">Contact</a>
+                    <a href="#">Blog</a>
+                    <a href="#">Careers</a>
+                </div>
+
+                <a href="./register.php?user_type=patient" class="button header__cta hide-for-mobile" id="register">Register</a>
+            </nav>
+
+        </div>
+    </header>
