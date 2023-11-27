@@ -1,0 +1,24 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "Drug Dispensing Tool",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/reinhardbuyabo/drug-dispensing-tool.git"
+  },
+  "author": "Reinhard Buyabo",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/reinhardbuyabo/drug-dispensing-tool/issues"
+  },
+  "homepage": "https://github.com/reinhardbuyabo/drug-dispensing-tool#readme",
+  "dependencies": {
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "mongoose": "^8.0.1"
+  }
+}
