@@ -9,8 +9,8 @@ const port = process.env.PORT;
 // Middlware
 // DB Config
 // API Endpoints
-app.get('/', (req, res) => {
-    res.status(200).json({message: "Initial Commit"})
-})
+app.use("/admin", require('./routes/adminRoutes'));
+app.use("/user", require('./routes/userRoutes'));
+
 // Listener
 app.listen(port, () => console.log(`Listening on port ${port}`));
