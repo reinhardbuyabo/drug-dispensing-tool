@@ -1,6 +1,6 @@
 const Drug = require('../models/drugModel');
 // @desc Create New Drug
-// @route GET /admin/drug
+// @route GET /admin/drugs
 // @access Public
 const getDrugs = async (req, res) => {
     const drugs = await Drug.find();
@@ -9,7 +9,7 @@ const getDrugs = async (req, res) => {
 }
 
 // @desc Create New Drug
-// @route POST /admin/drug
+// @route POST /admin/drugs
 // @access Private
 const addDrug = async (req, res) => {
     if (!req.body.name){
@@ -39,8 +39,20 @@ const addDrug = async (req, res) => {
 // @desc edit New Drug
 // @route PUT /admin/drug
 // @access Private
-const editDrug = (req, res) => {
-    res.status(200).json({message: "Edit new Drug"});
+const editDrug = async (req, res) => {
+    // 1. Query db for id
+    const drug = await Drug.findById(req.params.id);
+    // 2. Check if drug has been found, if not throw err
+    if(!drug){
+        res.status(400);
+        throw new Error('Drug Not Found');
+    }
+    // 3. Update drug
+    const updatedDrug = await Drug.findByIdAndUpdate(req.params.id, req.body, {
+        new: true
+    })
+
+    res.status(200).json(updatedDrug);
 }
 
 // @desc Create New Drug

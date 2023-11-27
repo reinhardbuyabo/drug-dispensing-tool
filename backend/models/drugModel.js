@@ -12,7 +12,7 @@ const drugSchema = mongoose.Schema({
     },
     name: {
         type: String,
-        required: [true, 'Please add a name']
+        required: [true, 'Please add a drug name']
     },
     category: {
         type: String,
