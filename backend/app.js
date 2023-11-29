@@ -18,7 +18,7 @@ connectDB();
 
 // API Endpoints
 app.use("/admin", require('./routes/adminRoutes'));
-app.use("/user", require('./routes/userRoutes'));
+app.use("/users", require('./routes/userRoutes'));
 
 // Error handling
 app.use(errorHandler);

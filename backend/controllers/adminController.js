@@ -154,6 +154,22 @@ const deleteUser = async (req, res) => {
     res.status(200).json({id: user.id});
 }
 
+const selfRegisteredUserToken = async(req, res) => {
+    const user = await User.findById(req.params.id);
+
+    if(!user){
+        res.status(400);
+        throw new Error("User Not Found");
+    }
+
+    res.status(200).json({
+        _id: user.id,
+        name: user.name,
+        email: user.email,
+        token: generateToken(user.id)
+    });
+}
+
 const generateToken = id => jwt.sign({ id }, process.env.JWT_SECRET, { expiresIn: '30d' });
 
 module.exports = {
@@ -164,5 +180,7 @@ module.exports = {
     getUsers,
     addUser,
     editUser,
-    deleteUser
+    deleteUser,
+    generateToken,
+    selfRegisteredUserToken
 }
