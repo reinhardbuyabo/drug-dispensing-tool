@@ -17,8 +17,8 @@ app.use(urlencoded({extended: false}));
 connectDB();
 
 // API Endpoints
-app.use("/admin", require('./routes/adminRoutes'));
-app.use("/users", require('./routes/userRoutes'));
+app.use("/api/admin", require('./routes/adminRoutes'));
+app.use("/api/users", require('./routes/userRoutes'));
 
 // Error handling
 app.use(errorHandler);
