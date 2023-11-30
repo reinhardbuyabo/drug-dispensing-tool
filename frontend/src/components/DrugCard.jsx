@@ -11,18 +11,22 @@ import React from 'react';
  */
 
 const DrugCard = ({ drug }) => {
-  const tags = drug.tags.split(','); // tags was stored as a string containing tags ...
+  // const tags = drug.tags.split(','); // tags was stored as a string containing tags ...
+
+  const onClick = () => {
+    console.log("Button Clicked");
+  }
 
   return (
     <div>
       <div className="max-w-sm rounded overflow-hidden shadow-lg">
         
-        <img src={drug.webformatURL} alt="" className="w-full" />
+        <img src="https://deliverypharmacyke.com/wp-content/uploads/2020/10/CALPOL-6-SYRUP-S-F-80ml.jpg" alt="" className="w-full" />
 
         <div className="px-6 py-4">
 
-          <div className="font-bold text-purple-500 text-xl mb-2">
-            Photo by {drug.user}
+          <div className="font-bold text-black-500 text-xl mb-2">
+            {drug.name}
           </div>
 
         </div>
@@ -30,29 +34,34 @@ const DrugCard = ({ drug }) => {
 
         <ul>
           <li>
-            <strong>Views: </strong>
-            {drug.views}
+            <strong>Category: </strong>
+            {drug.category}
           </li>
 
-          <li>
-            <strong>Downloads: </strong>
-            {drug.downloads}
-          </li>
+          {/* <li>
+            <strong>: </strong>
+            {drug.category}
+          </li> */}
 
-          <li>
-            <strong>Likes: </strong>
-            {drug.likes}
-          </li>
+          {/* <li>
+            <strong>: </strong>
+            {drug.name}
+          </li> */}
         </ul>
+
+        <button
+      className="btn mx-auto mb-2"
+      onClick={onClick}
+>Purchase</button>
       </div>
 
-      <div className="px-6 py-4">
+      {/* <div className="px-6 py-4">
         {tags.map((tag, index) => (
           <span key={index} className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2">
           {tag}
         </span>
         ))}
-      </div>
+      </div> */}
     </div>
   )
 }
