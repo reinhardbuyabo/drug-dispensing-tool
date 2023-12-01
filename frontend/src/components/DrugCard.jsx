@@ -21,7 +21,7 @@ const DrugCard = ({ drug }) => {
     <div>
       <div className="max-w-sm rounded overflow-hidden shadow-lg">
         
-        <img src="https://deliverypharmacyke.com/wp-content/uploads/2020/10/CALPOL-6-SYRUP-S-F-80ml.jpg" alt="" className="w-full" />
+        <img src={drug.img} alt="" className="w-full" />
 
         <div className="px-6 py-4">
 
@@ -38,10 +38,10 @@ const DrugCard = ({ drug }) => {
             {drug.category}
           </li>
 
-          {/* <li>
-            <strong>: </strong>
-            {drug.category}
-          </li> */}
+          <li>
+            <strong>Drug ID: </strong>
+            {drug._id}
+          </li>
 
           {/* <li>
             <strong>: </strong>
